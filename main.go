@@ -26,6 +26,6 @@ func main() {
 	e.GET("/", handler.ExampleHandler)
 	e.GET("/callback/", handler.ExampleCallbackHandler)
 
-	//HTTPSを使うのに必要！
+	// Require SSL
 	e.Logger.Fatal(e.StartTLS(":3000", "cert.pem", "key.pem"))
 }
