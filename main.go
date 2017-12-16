@@ -39,6 +39,7 @@ func main() {
 	e.GET("/browse/newreleases", handler.BrowseNewReleases)
 	e.GET("/browse/categories", handler.BrowseCategories)
 	e.GET("/browse/category", handler.BrowseCategory)
+	e.GET("/browse/categorysplaylists", handler.BrowseCategorysPlaylists)
 
 	// Require SSL
 	e.Logger.Fatal(e.StartTLS(":3000", "cert.pem", "key.pem"))
