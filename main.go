@@ -32,6 +32,7 @@ func main() {
 	e.GET("/artists/toptracks", handler.ArtistsTopTracksHandler)
 	e.GET("/artists/relatedartists", handler.ArtistsRelatedArtistsHandler)
 	e.GET("/browse/featuredplaylists", handler.BrowseFeaturedPlaylists)
+	e.GET("/browse/newreleases", handler.BrowseNewReleases)
 
 
 	// Require SSL
