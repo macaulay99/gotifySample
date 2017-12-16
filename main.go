@@ -28,6 +28,8 @@ func main() {
 	e.GET("/albums", handler.AlbumsHandler)
 	e.GET("/albumstracks", handler.AlbumsTracksHandler)
 	e.GET("/artists", handler.ArtistsHandler)
+	e.GET("/artistsalbums", handler.ArtistsAlbumsHandler)
+
 
 	// Require SSL
 	e.Logger.Fatal(e.StartTLS(":3000", "cert.pem", "key.pem"))
