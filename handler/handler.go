@@ -20,12 +20,12 @@ func ExampleHandler(c echo.Context) error {
 }
 
 func ExampleCallbackHandler(c echo.Context) error {
-	token, err := Auth.Token(c.Request())
+	token, err := Auth.GetToken(c.Request())
 	if err != nil {
 		return err
 	}
 
-	res, err := gotify.GetUserStatus(token)
+	res, err := token.GetUserStatus()
 	if err != nil {
 		return nil
 	}
