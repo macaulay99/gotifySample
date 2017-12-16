@@ -1,6 +1,6 @@
 # gotifySample
 
-gotifySample is the sample application of [gotify](https://github.com/gericass/gotify)
+gotifySample is the sample application for [gotify](https://github.com/gericass/gotify)
 
 ## Requirements
 
