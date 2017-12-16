@@ -1,10 +1,10 @@
 # gotifySample
 
-gotifySample is the sample application of (gotify)[https://github.com/gericass/gotify]
+gotifySample is the sample application of [gotify](https://github.com/gericass/gotify)
 
 ## Requirements
 
-This application uses (echo framework)[https://github.com/labstack/echo]
+This application uses [echo framework](https://github.com/labstack/echo)
 
 - Go 1.9 or later
 
