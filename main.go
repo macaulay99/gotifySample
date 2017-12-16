@@ -41,6 +41,8 @@ func main() {
 	e.GET("/browse/category", handler.BrowseCategory)
 	e.GET("/browse/categorysplaylists", handler.BrowseCategorysPlaylists)
 
+	e.GET("/recommendations", handler.RecommendationsHandler)
+
 	// Require SSL
 	e.Logger.Fatal(e.StartTLS(":3000", "cert.pem", "key.pem"))
 }
