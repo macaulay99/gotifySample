@@ -16,7 +16,7 @@ func AlbumsHandler(c echo.Context) error {
 	}
 	out, err := json.Marshal(res)
 	if err != nil {
-		panic(err)
+		return err
 	}
 	return c.String(http.StatusOK, string(out))
 }
@@ -31,7 +31,7 @@ func AlbumsTracksHandler(c echo.Context) error {
 	}
 	out, err := json.Marshal(res)
 	if err != nil {
-		panic(err)
+		return err
 	}
 	return c.String(http.StatusOK, string(out))
 }

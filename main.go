@@ -27,6 +27,7 @@ func main() {
 	e.GET("/callback/", handler.CallbackHandler)
 	e.GET("/albums", handler.AlbumsHandler)
 	e.GET("/albumstracks", handler.AlbumsTracksHandler)
+	e.GET("/artists", handler.AlbumsTracksHandler)
 
 
 	// Require SSL
