@@ -30,7 +30,7 @@ func main() {
 	e.GET("/artists", handler.ArtistsHandler)
 	e.GET("/artistsalbums", handler.ArtistsAlbumsHandler)
 	e.GET("/artiststoptracks", handler.ArtistsTopTracksHandler)
-	e.GET("/artitstsrelatedartists", handler.ArtistsRelatedArtistsHandler)
+	e.GET("/artistsrelatedartists", handler.ArtistsRelatedArtistsHandler)
 
 
 	// Require SSL
