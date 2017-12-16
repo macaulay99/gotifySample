@@ -25,16 +25,20 @@ func main() {
 
 	e.GET("/", handler.Handler)
 	e.GET("/callback/", handler.CallbackHandler)
+
 	e.GET("/albums", handler.AlbumsHandler)
 	e.GET("/albumstracks", handler.AlbumsTracksHandler)
+
 	e.GET("/artists", handler.ArtistsHandler)
 	e.GET("/artists/albums", handler.ArtistsAlbumsHandler)
+
 	e.GET("/artists/toptracks", handler.ArtistsTopTracksHandler)
 	e.GET("/artists/relatedartists", handler.ArtistsRelatedArtistsHandler)
+
 	e.GET("/browse/featuredplaylists", handler.BrowseFeaturedPlaylists)
 	e.GET("/browse/newreleases", handler.BrowseNewReleases)
 	e.GET("/browse/categories", handler.BrowseCategories)
-
+	e.GET("/browse/category", handler.BrowseCategory)
 
 	// Require SSL
 	e.Logger.Fatal(e.StartTLS(":3000", "cert.pem", "key.pem"))
