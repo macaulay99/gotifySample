@@ -23,8 +23,10 @@ func main() {
 
 	handler.Auth = gotify.Set(clientID, clientSecret, callbackURI)
 
-	e.GET("/", handler.ExampleHandler)
-	e.GET("/callback/", handler.ExampleCallbackHandler)
+	e.GET("/", handler.Handler)
+	e.GET("/callback/", handler.CallbackHandler)
+	e.GET("/albums/", handler.AlbumsHandler)
+
 
 	// Require SSL
 	e.Logger.Fatal(e.StartTLS(":3000", "cert.pem", "key.pem"))

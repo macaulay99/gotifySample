@@ -1,7 +1,3 @@
-/**
-Don't Edit
-*/
-
 package handler
 
 import (
@@ -13,19 +9,20 @@ import (
 )
 
 var Auth *gotify.Client
+var Token *gotify.Tokens
 
-func ExampleHandler(c echo.Context) error {
+func Handler(c echo.Context) error {
 	url := Auth.AuthURL()
 	return c.Redirect(301, url)
 }
 
-func ExampleCallbackHandler(c echo.Context) error {
-	token, err := Auth.GetToken(c.Request())
+func CallbackHandler(c echo.Context) error {
+	t, err := Auth.GetToken(c.Request())
 	if err != nil {
 		return err
 	}
-
-	res, err := token.GetUserStatus()
+	Token = t
+	res, err := Token.GetUserStatus()
 	if err != nil {
 		return nil
 	}
