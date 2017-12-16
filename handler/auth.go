@@ -22,9 +22,6 @@ func CallbackHandler(c echo.Context) error {
 		return err
 	}
 	Token = t
-	res, err := Token.GetUserStatus()
-	if err != nil {
-		return nil
-	}
-	return c.String(http.StatusOK, res)
+
+	return c.String(http.StatusOK, "Authentication success")
 }
