@@ -43,6 +43,8 @@ func main() {
 
 	e.GET("/recommendations", handler.RecommendationsHandler)
 
+	e.GET("/following/artists", handler.FollowingArtistsHandler)
+
 	// Require SSL
 	e.Logger.Fatal(e.StartTLS(":3000", "cert.pem", "key.pem"))
 }
