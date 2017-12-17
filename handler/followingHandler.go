@@ -30,7 +30,7 @@ func FollowArtistsOrUsersHandler(c echo.Context) error {
 	return c.String(http.StatusOK, "ok")
 }
 
-func UnFollowArtistsOrUsersHandler(c echo.Context) error {
+func UnfollowArtistsOrUsersHandler(c echo.Context) error {
 
 	ids := []string{"5yKN5TpzvkQ17yDofamX90"}
 	err := Token.UnfollowArtistsOrUsers("artist", ids)
