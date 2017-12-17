@@ -21,8 +21,19 @@ func FollowingArtistsHandler(c echo.Context) error {
 
 func FollowArtistsOrUsersHandler(c echo.Context) error {
 
-	ids := []string{"0uCCBpmg6MrPb1KY2msceF"}
+	ids := []string{"5yKN5TpzvkQ17yDofamX90"}
 	err := Token.FollowArtistsOrUsers("artist", ids)
+	if err != nil {
+		return err
+	}
+
+	return c.String(http.StatusOK, "ok")
+}
+
+func UnFollowArtistsOrUsersHandler(c echo.Context) error {
+
+	ids := []string{"5yKN5TpzvkQ17yDofamX90"}
+	err := Token.UnfollowArtistsOrUsers("artist", ids)
 	if err != nil {
 		return err
 	}

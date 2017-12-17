@@ -44,7 +44,9 @@ func main() {
 	e.GET("/recommendations", handler.RecommendationsHandler)
 
 	e.GET("/following/artists", handler.FollowingArtistsHandler)
-	e.GET("/following/artistsorusers", handler.FollowArtistsOrUsersHandler)
+	e.GET("/following/follow/artistsorusers", handler.FollowArtistsOrUsersHandler)
+	e.GET("/following/unfollow/artistsorusers", handler.FollowArtistsOrUsersHandler)
+
 
 	// Require SSL
 	e.Logger.Fatal(e.StartTLS(":3000", "cert.pem", "key.pem"))
