@@ -12,7 +12,7 @@ func ArtistsHandler(c echo.Context) error {
 
 	res, err := Token.GetArtists(artistIDs)
 	if err != nil {
-		return nil
+		return err
 	}
 	out, err := json.Marshal(res)
 	if err != nil {
@@ -27,7 +27,7 @@ func ArtistsAlbumsHandler(c echo.Context) error {
 
 	res, err := Token.GetArtistsAlbums(artistID)
 	if err != nil {
-		return nil
+		return err
 	}
 	out, err := json.Marshal(res)
 	if err != nil {
@@ -43,7 +43,7 @@ func ArtistsTopTracksHandler(c echo.Context) error {
 
 	res, err := Token.GetArtistsTopTracks(artistID, country)
 	if err != nil {
-		return nil
+		return err
 	}
 	out, err := json.Marshal(res)
 	if err != nil {
@@ -58,7 +58,7 @@ func ArtistsRelatedArtistsHandler(c echo.Context) error {
 
 	res, err := Token.GetArtistsRelatedArtists(artistID)
 	if err != nil {
-		return nil
+		return err
 	}
 	out, err := json.Marshal(res)
 	if err != nil {

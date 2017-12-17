@@ -12,7 +12,7 @@ func AlbumsHandler(c echo.Context) error {
 
 	res, err := Token.GetAlbums(albumIDs)
 	if err != nil {
-		return nil
+		return err
 	}
 	out, err := json.Marshal(res)
 	if err != nil {
@@ -27,7 +27,7 @@ func AlbumsTracksHandler(c echo.Context) error {
 
 	res, err := Token.GetAlbumsTracks(albumID)
 	if err != nil {
-		return nil
+		return err
 	}
 	out, err := json.Marshal(res)
 	if err != nil {

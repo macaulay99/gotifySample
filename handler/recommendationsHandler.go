@@ -10,7 +10,7 @@ func RecommendationsHandler(c echo.Context) error {
 
 	res, err := Token.GetRecommendations()
 	if err != nil {
-		return nil
+		return err
 	}
 	out, err := json.Marshal(res)
 	if err != nil {

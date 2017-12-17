@@ -10,7 +10,7 @@ func BrowseFeaturedPlaylists(c echo.Context) error {
 
 	res, err := Token.GetBrowseFeaturedPlaylists()
 	if err != nil {
-		return nil
+		return err
 	}
 	out, err := json.Marshal(res)
 	if err != nil {
@@ -23,7 +23,7 @@ func BrowseNewReleases(c echo.Context) error {
 
 	res, err := Token.GetBrowseNewReleases()
 	if err != nil {
-		return nil
+		return err
 	}
 	out, err := json.Marshal(res)
 	if err != nil {
@@ -36,7 +36,7 @@ func BrowseCategories(c echo.Context) error {
 
 	res, err := Token.GetBrowseCategories()
 	if err != nil {
-		return nil
+		return err
 	}
 	out, err := json.Marshal(res)
 	if err != nil {
@@ -49,7 +49,7 @@ func BrowseCategory(c echo.Context) error {
 
 	res, err := Token.GetBrowseCategory("party")
 	if err != nil {
-		return nil
+		return err
 	}
 	out, err := json.Marshal(res)
 	if err != nil {
@@ -62,7 +62,7 @@ func BrowseCategorysPlaylists(c echo.Context) error {
 
 	res, err := Token.GetBrowseCategorysPlaylists("party")
 	if err != nil {
-		return nil
+		return err
 	}
 	out, err := json.Marshal(res)
 	if err != nil {
