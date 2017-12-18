@@ -32,7 +32,7 @@ func CallbackHandler(c echo.Context) error {
 
 func RefreshHandler(c echo.Context) error {
 
-	err := Auth.Refresh(Token) // Refreshing token for using Spotify API
+	err := Token.Refresh() // Refreshing token for using Spotify API
 	if err != nil {
 		return err
 	}
