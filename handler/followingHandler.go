@@ -55,3 +55,16 @@ func CurrentFollowArtistsOrUsersHandler(c echo.Context) error {
 
 	return c.String(http.StatusOK, string(out))
 }
+
+func FollowPlaylistHandler(c echo.Context) error {
+
+	userID := ""
+	playlistID := ""
+
+	err := Token.FollowPlaylist(userID, playlistID)
+	if err != nil {
+		return err
+	}
+
+	return c.String(http.StatusOK, )
+}
