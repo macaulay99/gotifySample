@@ -66,5 +66,5 @@ func FollowPlaylistHandler(c echo.Context) error {
 		return err
 	}
 
-	return c.String(http.StatusOK, )
+	return c.String(http.StatusOK, "OK")
 }
