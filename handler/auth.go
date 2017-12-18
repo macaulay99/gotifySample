@@ -37,5 +37,5 @@ func RefreshHandler(c echo.Context) error {
 		return err
 	}
 
-	return c.String(http.StatusOK, "Authentication Refreshed")
+	return c.String(http.StatusOK, "AccessToken Refreshed")
 }
