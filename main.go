@@ -25,6 +25,7 @@ func main() {
 
 	e.GET("/", handler.Handler)
 	e.GET("/callback/", handler.CallbackHandler)
+	e.GET("/refresh/", handler.RefreshHandler)
 
 	e.GET("/albums", handler.AlbumsHandler)
 	e.GET("/albumstracks", handler.AlbumsTracksHandler)

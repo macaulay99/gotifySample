@@ -9,7 +9,7 @@ import (
 )
 
 var Auth gotify.OAuth
-var Token *gotify.Tokens
+var Token gotify.Gotify
 
 // Handler : Controller for https://localhost:3000/
 func Handler(c echo.Context) error {
@@ -28,4 +28,14 @@ func CallbackHandler(c echo.Context) error {
 	Token = t
 
 	return c.String(http.StatusOK, "Authentication success")
+}
+
+func RefreshHandler(c echo.Context) error {
+
+	err := Auth.Refresh(Token) // Refreshing token for using Spotify API
+	if err != nil {
+		return err
+	}
+
+	return c.String(http.StatusOK, "Authentication Refreshed")
 }
