@@ -46,6 +46,7 @@ func main() {
 	e.GET("/following/artists", handler.FollowingArtistsHandler)
 	e.GET("/following/follow/artistsorusers", handler.FollowArtistsOrUsersHandler)
 	e.GET("/following/unfollow/artistsorusers", handler.UnfollowArtistsOrUsersHandler)
+	e.GET("/following/current/artistsorusers", handler.CurrentFollowArtistsOrUsersHandler)
 
 
 	// Require SSL

@@ -40,3 +40,14 @@ func UnfollowArtistsOrUsersHandler(c echo.Context) error {
 
 	return c.String(http.StatusOK, "ok")
 }
+
+func CurrentFollowArtistsOrUsersHandler(c echo.Context) error {
+
+	ids := []string{"5yKN5TpzvkQ17yDofamX90"}
+	err := Token.UnfollowArtistsOrUsers("artist", ids)
+	if err != nil {
+		return err
+	}
+
+	return c.String(http.StatusOK, "ok")
+}
