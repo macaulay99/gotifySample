@@ -61,3 +61,15 @@ func CheckUsersSavedTracksHandler(c echo.Context) error {
 
 	return c.String(http.StatusOK, string(out))
 }
+
+func SaveAlbumsHandler(c echo.Context) error {
+
+	ids := []string{"4iV5W9uYEdYUVa79Axb7Rh"}
+
+	err := Token.SaveAlbums(ids)
+	if err != nil {
+		return err
+	}
+
+	return c.String(http.StatusOK, "OK")
+}
