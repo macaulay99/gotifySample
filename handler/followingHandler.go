@@ -68,3 +68,34 @@ func FollowPlaylistHandler(c echo.Context) error {
 
 	return c.String(http.StatusOK, "OK")
 }
+
+func UnfollowPlaylistHandler(c echo.Context) error {
+
+	userID := ""
+	playlistID := ""
+
+	err := Token.UnfollowPlaylist(userID, playlistID)
+	if err != nil {
+		return err
+	}
+
+	return c.String(http.StatusOK, "OK")
+}
+
+func CheckFollowPlaylistHandler(c echo.Context) error {
+
+	ownerID := ""
+	playlistID := ""
+	userIDs := []string{""}
+
+	res, err := Token.CheckFollowPlaylist(ownerID, playlistID, userIDs)
+	if err != nil {
+		return err
+	}
+	out, err := json.Marshal(res)
+	if err != nil {
+		return err
+	}
+
+	return c.String(http.StatusOK, string(out))
+}

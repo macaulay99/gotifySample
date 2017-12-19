@@ -49,7 +49,11 @@ func main() {
 	e.GET("/following/unfollow/artistsorusers", handler.UnfollowArtistsOrUsersHandler)
 	e.GET("/following/current/artistsorusers", handler.CurrentFollowArtistsOrUsersHandler)
 	e.GET("/following/follow/playlists", handler.FollowPlaylistHandler)
+	e.GET("/following/unfollow/playlists", handler.UnfollowPlaylistHandler)
+	e.GET("/following/check/playlist", handler.CheckFollowPlaylistHandler)
 
+	e.GET("/library/savetracks", handler.SaveTracksHandler)
+	e.GET("/library/users/savedtracks", handler.UsersSavedTracksHandler)
 
 	// Require SSL
 	e.Logger.Fatal(e.StartTLS(":3000", "cert.pem", "key.pem"))
