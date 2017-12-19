@@ -64,7 +64,7 @@ func CheckUsersSavedTracksHandler(c echo.Context) error {
 
 func SaveAlbumsHandler(c echo.Context) error {
 
-	ids := []string{"4iV5W9uYEdYUVa79Axb7Rh"}
+	ids := []string{"72N66a5gEVxk2xtSeymwIM"}
 
 	err := Token.SaveAlbums(ids)
 	if err != nil {
