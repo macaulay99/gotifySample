@@ -73,3 +73,17 @@ func SaveAlbumsHandler(c echo.Context) error {
 
 	return c.String(http.StatusOK, "OK")
 }
+
+func GetUsersSavedAlbumsHandler(c echo.Context) error {
+
+	res, err := Token.GetUsersSavedAlbums()
+	if err != nil {
+		return err
+	}
+	out, err := json.Marshal(res)
+	if err != nil {
+		return err
+	}
+
+	return c.String(http.StatusOK, string(out))
+}
