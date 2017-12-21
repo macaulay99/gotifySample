@@ -52,13 +52,13 @@ func main() {
 	e.GET("/following/unfollow/playlists", handler.UnfollowPlaylistHandler)
 	e.GET("/following/check/playlist", handler.CheckFollowPlaylistHandler)
 
-	e.GET("/library/savetracks", handler.SaveTracksHandler)
-	e.GET("/library/get/userssavedtracks", handler.GetUsersSavedTracksHandler)
-	e.GET("/library/delete/userssavedtracks", handler.RemoveUsersSavedTracksHandler)
-	e.GET("/library/check/userssavedtracks", handler.CheckUsersSavedTracksHandler)
-	e.GET("/library/savealbums", handler.SaveAlbumsHandler)
-	e.GET("/library/getalbums", handler.GetUsersSavedAlbumsHandler)
-	e.GET("/library/removealbums", handler.RemoveAlbumsForCurrentUserHandler)
+	e.GET("/library/save/tracks", handler.SaveTracksHandler)
+	e.GET("/library/get/tracks", handler.GetUsersSavedTracksHandler)
+	e.GET("/library/delete/tracks", handler.RemoveUsersSavedTracksHandler)
+	e.GET("/library/check/tracks", handler.CheckUsersSavedTracksHandler)
+	e.GET("/library/save/albums", handler.SaveAlbumsHandler)
+	e.GET("/library/get/albums", handler.GetUsersSavedAlbumsHandler)
+	e.GET("/library/remove/albums", handler.RemoveAlbumsForCurrentUserHandler)
 	e.GET("/library/check/albums", handler.CheckUsersSavedAlbumsHandler)
 
 	// Require SSL
