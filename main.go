@@ -64,7 +64,10 @@ func main() {
 	e.GET("/personalization/get/recentlyplayedtracks", handler.GetRecentlyPlayedTracksHandler)
 
 	e.GET("/player/get/availabledevices", handler.GetUsersAvailableDevicesHandler)
-	e.GET("/player/get/informationaboutuserscurrentplayback", handler.GetInformationAboutUsersCurrentPlaybackHandler)
+
+	// e.GET("/player/get/informationaboutuserscurrentplayback", handler.GetInformationAboutUsersCurrentPlaybackHandler)
+	e.GET("/player/get/currentlyplaying", handler.GetUsersCurrentlyPlayingTrackHandler)
+
 
 	// Require SSL
 	e.Logger.Fatal(e.StartTLS(":3000", "cert.pem", "key.pem"))
