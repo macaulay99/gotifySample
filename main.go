@@ -58,6 +58,7 @@ func main() {
 	e.GET("/library/check/userssavedtracks", handler.CheckUsersSavedTracksHandler)
 	e.GET("/library/savealbums", handler.SaveAlbumsHandler)
 	e.GET("/library/getalbums", handler.GetUsersSavedAlbumsHandler)
+	e.GET("/library/removealbums", handler.RemoveAlbumsForCurrentUserHandler)
 
 	// Require SSL
 	e.Logger.Fatal(e.StartTLS(":3000", "cert.pem", "key.pem"))

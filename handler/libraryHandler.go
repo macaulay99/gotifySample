@@ -87,3 +87,16 @@ func GetUsersSavedAlbumsHandler(c echo.Context) error {
 
 	return c.String(http.StatusOK, string(out))
 }
+
+func RemoveAlbumsForCurrentUserHandler(c echo.Context) error {
+
+	ids := []string{"72N66a5gEVxk2xtSeymwIM"}
+
+	err := Token.RemoveAlbumsForCurrentUser(ids)
+	if err != nil {
+		return err
+	}
+
+
+	return c.String(http.StatusOK, "OK")
+}
