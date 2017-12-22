@@ -110,7 +110,9 @@ func SkipUsersPlaybackToPreviousHandler(c echo.Context) error {
 
 func SeekToPositionInCurrentlyPlayingTrackHandler(c echo.Context) error {
 
-	err := Token.SeekToPositionInCurrentlyPlayingTrack()
+	pos := 1234
+
+	err := Token.SeekToPositionInCurrentlyPlayingTrack(pos)
 	if err != nil {
 		return err
 	}
