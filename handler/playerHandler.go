@@ -4,7 +4,6 @@ import (
 	"github.com/labstack/echo"
 	"encoding/json"
 	"net/http"
-	"github.com/gericass/gotify"
 )
 
 func GetUsersAvailableDevicesHandler(c echo.Context) error {
@@ -67,7 +66,6 @@ func TransferUsersPlaybackHandler(c echo.Context) error {
 
 func StartResumeUsersPlaybackHandler(c echo.Context) error {
 
-
 	err := Token.StartResumeUsersPlayback()
 	if err != nil {
 		return err
@@ -78,7 +76,6 @@ func StartResumeUsersPlaybackHandler(c echo.Context) error {
 
 func PauseUsersPlaybackHandler(c echo.Context) error {
 
-
 	err := Token.PauseUsersPlayback()
 	if err != nil {
 		return err
@@ -88,7 +85,6 @@ func PauseUsersPlaybackHandler(c echo.Context) error {
 }
 
 func SkipUsersPlaybackToNextHandler(c echo.Context) error {
-
 
 	err := Token.SkipUsersPlaybackToNext()
 	if err != nil {
@@ -107,7 +103,6 @@ func SkipUsersPlaybackToPreviousHandler(c echo.Context) error {
 
 	return c.String(http.StatusOK, "OK")
 }
-
 
 func SeekToPositionInCurrentlyPlayingTrackHandler(c echo.Context) error {
 
