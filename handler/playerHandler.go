@@ -89,7 +89,7 @@ func PauseUsersPlaybackHandler(c echo.Context) error {
 func SkipUsersPlaybackHandler(c echo.Context) error {
 
 
-	err := Token.SkipUsersPlayback()
+	err := Token.SkipUsersPlaybackToNext()
 	if err != nil {
 		return err
 	}
