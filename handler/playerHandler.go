@@ -86,10 +86,20 @@ func PauseUsersPlaybackHandler(c echo.Context) error {
 	return c.String(http.StatusOK, "OK")
 }
 
-func SkipUsersPlaybackHandler(c echo.Context) error {
+func SkipUsersPlaybackToNextHandler(c echo.Context) error {
 
 
 	err := Token.SkipUsersPlaybackToNext()
+	if err != nil {
+		return err
+	}
+
+	return c.String(http.StatusOK, "OK")
+}
+
+func SkipUsersPlaybackToPreviousHandler(c echo.Context) error {
+
+	err := Token.SkipUsersPlaybackToPrevious()
 	if err != nil {
 		return err
 	}

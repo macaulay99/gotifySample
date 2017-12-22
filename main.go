@@ -70,7 +70,8 @@ func main() {
 	e.GET("/player/put/usersplayback", handler.TransferUsersPlaybackHandler)
 	e.GET("/player/put/startresume", handler.StartResumeUsersPlaybackHandler)
 	e.GET("/player/put/pause", handler.PauseUsersPlaybackHandler)
-	e.GET("/player/post/skipplayback", handler.SkipUsersPlaybackHandler)
+	e.GET("/player/post/skipnext", handler.SkipUsersPlaybackToNextHandler)
+	e.GET("/player/post/skipprevious", handler.SkipUsersPlaybackToPreviousHandler)
 
 
 	// Require SSL
