@@ -116,9 +116,19 @@ func SeekToPositionInCurrentlyPlayingTrackHandler(c echo.Context) error {
 	return c.String(http.StatusOK, "OK")
 }
 
-func SetRepeatModeHandler(c echo.Context) error {
+func SetRepeatModeUsersPlaybackHandler(c echo.Context) error {
 
-	err := Token.SetRepeatMode("off")
+	err := Token.SetRepeatModeUsersPlayback("off")
+	if err != nil {
+		return err
+	}
+
+	return c.String(http.StatusOK, "OK")
+}
+
+func SetVolumeUsersPlaybackHandler(c echo.Context) error {
+
+	err := Token.SetVolumeUsersPlayback(20)
 	if err != nil {
 		return err
 	}
