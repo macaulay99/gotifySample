@@ -4,6 +4,7 @@ import (
 	"github.com/labstack/echo"
 	"encoding/json"
 	"net/http"
+	"github.com/gericass/gotify"
 )
 
 func GetUsersAvailableDevicesHandler(c echo.Context) error {
@@ -113,6 +114,16 @@ func SeekToPositionInCurrentlyPlayingTrackHandler(c echo.Context) error {
 	pos := 1234
 
 	err := Token.SeekToPositionInCurrentlyPlayingTrack(pos)
+	if err != nil {
+		return err
+	}
+
+	return c.String(http.StatusOK, "OK")
+}
+
+func SetRepeatModeHandler(c echo.Context) error {
+
+	err := Token.SetRepeatMode("off")
 	if err != nil {
 		return err
 	}

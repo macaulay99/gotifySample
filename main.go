@@ -73,6 +73,7 @@ func main() {
 	e.GET("/player/post/skipnext", handler.SkipUsersPlaybackToNextHandler)
 	e.GET("/player/post/skipprevious", handler.SkipUsersPlaybackToPreviousHandler)
 	e.GET("/player/put/seek", handler.SeekToPositionInCurrentlyPlayingTrackHandler)
+	e.GET("/player/put/repeat", handler.SetRepeatModeHandler)
 
 
 	// Require SSL
