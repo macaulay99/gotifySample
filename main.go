@@ -72,6 +72,7 @@ func main() {
 	e.GET("/player/put/pause", handler.PauseUsersPlaybackHandler)
 	e.GET("/player/post/skipnext", handler.SkipUsersPlaybackToNextHandler)
 	e.GET("/player/post/skipprevious", handler.SkipUsersPlaybackToPreviousHandler)
+	e.GET("/player/put/seek", handler.SeekToPositionInCurrentlyPlayingTrackHandler)
 
 
 	// Require SSL

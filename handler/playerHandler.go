@@ -106,3 +106,14 @@ func SkipUsersPlaybackToPreviousHandler(c echo.Context) error {
 
 	return c.String(http.StatusOK, "OK")
 }
+
+
+func SeekToPositionInCurrentlyPlayingTrackHandler(c echo.Context) error {
+
+	err := Token.SeekToPositionInCurrentlyPlayingTrack()
+	if err != nil {
+		return err
+	}
+
+	return c.String(http.StatusOK, "OK")
+}
