@@ -135,3 +135,13 @@ func SetVolumeUsersPlaybackHandler(c echo.Context) error {
 
 	return c.String(http.StatusOK, "OK")
 }
+
+func ToggleShuffleUsersPlaybackHandler(c echo.Context) error {
+
+	err := Token.ToggleShuffleUsersPlayback(false)
+	if err != nil {
+		return err
+	}
+
+	return c.String(http.StatusOK, "OK")
+}

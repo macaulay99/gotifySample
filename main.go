@@ -75,6 +75,7 @@ func main() {
 	e.GET("/player/put/seek", handler.SeekToPositionInCurrentlyPlayingTrackHandler)
 	e.GET("/player/put/repeat", handler.SetRepeatModeUsersPlaybackHandler)
 	e.GET("/player/put/volume", handler.SetVolumeUsersPlaybackHandler)
+	e.GET("/player/put/shuffle", handler.ToggleShuffleUsersPlaybackHandler)
 
 
 	// Require SSL
