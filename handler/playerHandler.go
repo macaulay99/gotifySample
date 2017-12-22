@@ -74,3 +74,14 @@ func StartResumeUsersPlaybackHandler(c echo.Context) error {
 
 	return c.String(http.StatusOK, "OK")
 }
+
+func PauseUsersPlaybackHandler(c echo.Context) error {
+
+
+	err := Token.PauseUsersPlayback()
+	if err != nil {
+		return err
+	}
+
+	return c.String(http.StatusOK, "OK")
+}
