@@ -66,7 +66,8 @@ func main() {
 	e.GET("/player/get/availabledevices", handler.GetUsersAvailableDevicesHandler)
 
 	// e.GET("/player/get/informationaboutuserscurrentplayback", handler.GetInformationAboutUsersCurrentPlaybackHandler)
-	e.GET("/player/get/currentlyplaying", handler.GetUsersCurrentlyPlayingTrackHandler)
+	// e.GET("/player/get/currentlyplaying", handler.GetUsersCurrentlyPlayingTrackHandler)
+	e.GET("/player/put/usersplayback", handler.TransferUsersPlaybackHandler)
 
 
 	// Require SSL

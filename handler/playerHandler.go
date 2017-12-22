@@ -36,6 +36,7 @@ func GetInformationAboutUsersCurrentPlaybackHandler(c echo.Context) error {
 }
 */
 
+/*
 func GetUsersCurrentlyPlayingTrackHandler(c echo.Context) error {
 
 	res, err := Token.GetUsersCurrentlyPlayingTrack()
@@ -48,4 +49,17 @@ func GetUsersCurrentlyPlayingTrackHandler(c echo.Context) error {
 	}
 
 	return c.String(http.StatusOK, string(out))
+}
+*/
+
+func TransferUsersPlaybackHandler(c echo.Context) error {
+
+	deviceIDs := []string{"74ASZWbe4lXaubB36ztrGX"}
+
+	err := Token.TransferUsersPlayback(deviceIDs)
+	if err != nil {
+		return err
+	}
+
+	return c.String(http.StatusOK, "OK")
 }
