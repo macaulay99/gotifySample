@@ -63,3 +63,14 @@ func TransferUsersPlaybackHandler(c echo.Context) error {
 
 	return c.String(http.StatusOK, "OK")
 }
+
+func StartResumeUsersPlaybackHandler(c echo.Context) error {
+
+
+	err := Token.StartResumeUsersPlayback()
+	if err != nil {
+		return err
+	}
+
+	return c.String(http.StatusOK, "OK")
+}
