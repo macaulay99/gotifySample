@@ -77,6 +77,7 @@ func main() {
 	e.GET("/player/put/volume", handler.SetVolumeUsersPlaybackHandler)
 	e.GET("/player/put/shuffle", handler.ToggleShuffleUsersPlaybackHandler)
 
+	e.GET("/search/artist", handler.SearchArtistHandler)
 
 	// Require SSL
 	e.Logger.Fatal(e.StartTLS(":3000", "cert.pem", "key.pem"))
