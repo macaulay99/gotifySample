@@ -47,3 +47,17 @@ func SearchPlaylistsHandler(c echo.Context) error {
 
 	return c.String(http.StatusOK, string(out))
 }
+
+func SearchTracksHandler(c echo.Context) error {
+
+	res, err := Token.SearchTracks("skyphobia")
+	if err != nil {
+		return err
+	}
+	out, err := json.Marshal(res)
+	if err != nil {
+		return err
+	}
+
+	return c.String(http.StatusOK, string(out))
+}
