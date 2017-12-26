@@ -86,6 +86,7 @@ func main() {
 	e.GET("/tracks/get/analysis", handler.GetAudioAnalysisHandler)
 
 	e.GET("/profile/get/currentuser", handler.GetCurrentUsersProfileHandler)
+	e.GET("/profile/get/user", handler.GetUsersProfileHandler)
 
 	// Require SSL
 	e.Logger.Fatal(e.StartTLS(":3000", "cert.pem", "key.pem"))
