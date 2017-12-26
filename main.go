@@ -82,7 +82,8 @@ func main() {
 	e.GET("/search/playlist", handler.SearchPlaylistsHandler)
 	e.GET("/search/track", handler.SearchTracksHandler)
 
-	e.GET("/get/tracks", handler.GetTracksHandler)
+	e.GET("/tracks/get/tracks", handler.GetTracksHandler)
+	e.GET("/tracks/get/analysis", handler.GetAudioAnalysisHandler)
 
 	// Require SSL
 	e.Logger.Fatal(e.StartTLS(":3000", "cert.pem", "key.pem"))
