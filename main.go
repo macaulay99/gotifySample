@@ -88,6 +88,8 @@ func main() {
 	e.GET("/profile/get/currentuser", handler.GetCurrentUsersProfileHandler)
 	e.GET("/profile/get/user", handler.GetUsersProfileHandler)
 
+	e.GET("/playlists/get/user", handler.GetUsersPlaylistsHandler)
+
 	// Require SSL
 	e.Logger.Fatal(e.StartTLS(":3000", "cert.pem", "key.pem"))
 }
