@@ -5,7 +5,7 @@ Don't Edit
 package main
 
 import (
-	"github.com/macaulay99/go_spotify_util"
+	"github.com/macaulay99/gotify"
 	"github.com/macaulay99/gotifySample/handler"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
