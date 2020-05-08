@@ -9,7 +9,6 @@ import (
 func GetTracksHandler(c echo.Context) error {
 
 	tracks := []string{"3n3Ppam7vgaVa1iaRUc9Lp"}
-
 	res, err := Token.GetTracks(tracks)
 	if err != nil {
 		return err

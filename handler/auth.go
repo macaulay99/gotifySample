@@ -5,11 +5,11 @@ import (
 
 	"github.com/labstack/echo"
 
-	"github.com/gericass/gotify"
+	"github.com/macaulay99/go_spotify_util"
 )
 
-var Auth gotify.OAuth
-var Token gotify.Gotify
+var Auth go_spotify_util.OAuth
+var Token go_spotify_util.Gotify
 
 // Handler : Controller for https://localhost:3000/
 func Handler(c echo.Context) error {

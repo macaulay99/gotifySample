@@ -5,15 +5,15 @@ Don't Edit
 package main
 
 import (
-	"github.com/gericass/gotify"
-	"github.com/gericass/gotifySample/handler"
+	"github.com/macaulay99/go_spotify_util"
+	"github.com/macaulay99/gotifySample/handler"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 )
 
-const clientID = ""
-const clientSecret = ""
-const callbackURI = "https://localhost:3000/callback/"
+const clientID = "f02c916edcf149568f8047bd97c59b61"
+const clientSecret = "f56f595b85af4eb9917d3bde48c52bb1"
+const callbackURI = "https://localhost:8080/callback/"
 
 func main() {
 	e := echo.New()
@@ -92,5 +92,5 @@ func main() {
 	e.GET("/playlists/get/currentuser", handler.GetCurrentUsersPlaylistsHandler)
 
 	// Require SSL
-	e.Logger.Fatal(e.StartTLS(":3000", "cert.pem", "key.pem"))
+	e.Logger.Fatal(e.StartTLS(":8080", "cert.pem", "key.pem"))
 }
