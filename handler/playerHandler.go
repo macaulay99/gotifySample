@@ -54,7 +54,7 @@ func GetUsersCurrentlyPlayingTrackHandler(c echo.Context) error {
 
 func TransferUsersPlaybackHandler(c echo.Context) error {
 
-	deviceIDs := []string{"74ASZWbe4lXaubB36ztrGX"}
+	deviceIDs := []string{""}
 
 	err := Token.TransferUsersPlayback(deviceIDs)
 	if err != nil {
@@ -73,12 +73,24 @@ func StartResumeUsersPlaybackHandler(c echo.Context) error {
 
 	return c.String(http.StatusOK, "OK")
 }
+func StartUsersTrackPlayHandler(c echo.Context) error {
 
-func PauseUsersPlaybackHandler(c echo.Context) error {
+    trackinfo := []string{"spotify:track:2tPDBuHnkBNvXNn7NtqtqX",
+                         "spotify:track:1301WleyT98MSxVHPZCA6M"}
+                      seekms := 500000
+                  	err := Token.StartUsersTrackPlay(trackinfo,seekms)
+                  	if err != nil {
+                  		return err
+                  	}
 
-	err := Token.PauseUsersPlayback()
-	if err != nil {
-		return err
+                  	return c.String(http.StatusOK, "OK")
+                  }
+
+                  func PauseUsersPlaybackHandler(c echo.Context) error {
+
+                  	err := Token.PauseUsersPlayback()
+                  	if err != nil {
+                  		return err
 	}
 
 	return c.String(http.StatusOK, "OK")
@@ -106,8 +118,9 @@ func SkipUsersPlaybackToPreviousHandler(c echo.Context) error {
 
 func SeekToPositionInCurrentlyPlayingTrackHandler(c echo.Context) error {
 
-	pos := 1234
+	pos := 60000
 
+    print("SeekToPositionInCurrentlyPlayingTrackHandler", pos)
 	err := Token.SeekToPositionInCurrentlyPlayingTrack(pos)
 	if err != nil {
 		return err
