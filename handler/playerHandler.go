@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"github.com/labstack/echo"
 	"encoding/json"
+	"github.com/labstack/echo"
 	"net/http"
 )
 
@@ -76,22 +76,22 @@ func StartResumeUsersPlaybackHandler(c echo.Context) error {
 
 func StartUsersTrackPlayHandler(c echo.Context) error {
 
-    trackinfo := []string{"spotify:track:2tPDBuHnkBNvXNn7NtqtqX",
-                         "spotify:track:1301WleyT98MSxVHPZCA6M"}
-                      seekms := 50000
-                  	err := Token.StartUsersTrackPlay(trackinfo,seekms)
-                  	if err != nil {
-                  		return err
-                  	}
+	trackinfo := []string{"spotify:track:2tPDBuHnkBNvXNn7NtqtqX",
+		"spotify:track:1301WleyT98MSxVHPZCA6M"}
+	seekms := 50000
+	err := Token.StartUsersTrackPlay(trackinfo, seekms)
+	if err != nil {
+		return err
+	}
 
-                  	return c.String(http.StatusOK, "OK")
-                  }
+	return c.String(http.StatusOK, "OK")
+}
 
-                  func PauseUsersPlaybackHandler(c echo.Context) error {
+func PauseUsersPlaybackHandler(c echo.Context) error {
 
-                  	err := Token.PauseUsersPlayback()
-                  	if err != nil {
-                  		return err
+	err := Token.PauseUsersPlayback()
+	if err != nil {
+		return err
 	}
 
 	return c.String(http.StatusOK, "OK")
@@ -121,7 +121,7 @@ func SeekToPositionInCurrentlyPlayingTrackHandler(c echo.Context) error {
 
 	pos := 60000
 
-    print("SeekToPositionInCurrentlyPlayingTrackHandler", pos)
+	print("SeekToPositionInCurrentlyPlayingTrackHandler", pos)
 	err := Token.SeekToPositionInCurrentlyPlayingTrack(pos)
 	if err != nil {
 		return err
