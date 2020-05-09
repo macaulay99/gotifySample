@@ -73,11 +73,12 @@ func StartResumeUsersPlaybackHandler(c echo.Context) error {
 
 	return c.String(http.StatusOK, "OK")
 }
+
 func StartUsersTrackPlayHandler(c echo.Context) error {
 
     trackinfo := []string{"spotify:track:2tPDBuHnkBNvXNn7NtqtqX",
                          "spotify:track:1301WleyT98MSxVHPZCA6M"}
-                      seekms := 500000
+                      seekms := 50000
                   	err := Token.StartUsersTrackPlay(trackinfo,seekms)
                   	if err != nil {
                   		return err
